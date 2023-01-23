@@ -1,5 +1,5 @@
 {% set name = "prefect-aws" %}
-{% set version = "0.2.1" %}
+{% set version = "0.2.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/prefect-aws-{{ version }}.tar.gz
-  sha256: 066e7511d999ab657b7e402ffe6d8b97b33c0b94bce33002d00825f2b2852ae5
+  sha256: 4c5be01f17e16255166cd58e69697f1802bb8b09e43866dc49801b14b7e65e28
 
 build:
   noarch: python
@@ -40,7 +40,7 @@ about:
   summary: Prefect collection of tasks and subflows to integrate with AWS
   doc_url: https://prefecthq.github.io/prefect-aws/
   dev_url: https://github.com/PrefectHQ/prefect-aws
-  
+
 
 extra:
   recipe-maintainers:
