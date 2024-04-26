@@ -1,5 +1,5 @@
 {% set name = "prefect-aws" %}
-{% set version = "0.4.15" %}
+{% set version = "0.4.14" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/prefect_aws-{{ version }}.tar.gz
-  sha256: e0c009a8945b0ecf46b6a28ba4965e2898c99eb2cb3aba15282c9780c6f3ee5a
+  sha256: 03ed4d4b9a49a7bad57fe7198da79f2ff5217a82b90600ae9aa6c9d29c951c95
 
 build:
   noarch: python
@@ -17,9 +17,6 @@ build:
 requirements:
   host:
     - python >=3.8
-    - setuptools >=45
-    - wheel
-    - setuptools-scm >=6.2
     - pip
   run:
     - python >=3.8
@@ -28,7 +25,6 @@ requirements:
     - mypy-boto3-s3 >=1.24.94
     - mypy-boto3-secretsmanager >=1.26.49
     - prefect >=2.16.4
-    - pyparsing >=3.1.1
     - tenacity >=8.0.0
 
 test:
@@ -41,10 +37,10 @@ test:
 
 about:
   home: https://github.com/PrefectHQ/prefect-aws
+  summary: Prefect collection of tasks and subflows to integrate with AWS
   license: Apache-2.0
   license_file: LICENSE
   license_family: Apache
-  summary: Prefect collection of tasks and subflows to integrate with AWS
   doc_url: https://prefecthq.github.io/prefect-aws/
   dev_url: https://github.com/PrefectHQ/prefect-aws
   
