@@ -1,28 +1,35 @@
 {% set name = "prefect-aws" %}
-{% set version = "0.2.1" %}
+{% set version = "0.4.15" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/prefect-aws-{{ version }}.tar.gz
-  sha256: 066e7511d999ab657b7e402ffe6d8b97b33c0b94bce33002d00825f2b2852ae5
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/prefect_aws-{{ version }}.tar.gz
+  sha256: e0c009a8945b0ecf46b6a28ba4965e2898c99eb2cb3aba15282c9780c6f3ee5a
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.8
+    - setuptools >=45
+    - wheel
+    - setuptools-scm >=6.2
     - pip
   run:
-    - python >=3.7
+    - python >=3.8
     - boto3 >=1.24.53
     - botocore >=1.27.53
-    - prefect >=2.6.7
+    - mypy-boto3-s3 >=1.24.94
+    - mypy-boto3-secretsmanager >=1.26.49
+    - prefect >=2.16.4
+    - pyparsing >=3.1.1
+    - tenacity >=8.0.0
 
 test:
   imports:
