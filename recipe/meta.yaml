@@ -30,10 +30,11 @@ requirements:
 test:
   imports:
     - prefect_aws
-  commands:
-    - pip check
-  requires:
-    - pip
+# Disable `pip check` until `prefect` adds `pip check` support
+#  commands:
+#    - pip check
+#  requires:
+#    - pip
 
 about:
   home: https://github.com/PrefectHQ/prefect-aws
