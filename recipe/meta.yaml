@@ -1,43 +1,47 @@
 {% set name = "prefect-aws" %}
-{% set version = "0.2.1" %}
+{% set version = "0.4.14" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/prefect-aws-{{ version }}.tar.gz
-  sha256: 066e7511d999ab657b7e402ffe6d8b97b33c0b94bce33002d00825f2b2852ae5
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/prefect_aws-{{ version }}.tar.gz
+  sha256: 03ed4d4b9a49a7bad57fe7198da79f2ff5217a82b90600ae9aa6c9d29c951c95
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.8
     - pip
   run:
-    - python >=3.7
+    - python >=3.8
     - boto3 >=1.24.53
     - botocore >=1.27.53
-    - prefect >=2.6.7
+    - mypy-boto3-s3 >=1.24.94
+    - mypy-boto3-secretsmanager >=1.26.49
+    - prefect >=2.16.4
+    - tenacity >=8.0.0
 
 test:
   imports:
     - prefect_aws
-  commands:
-    - pip check
-  requires:
-    - pip
+# Disable `pip check` until `prefect` adds `pip check` support
+#  commands:
+#    - pip check
+#  requires:
+#    - pip
 
 about:
   home: https://github.com/PrefectHQ/prefect-aws
+  summary: Prefect collection of tasks and subflows to integrate with AWS
   license: Apache-2.0
   license_file: LICENSE
   license_family: Apache
-  summary: Prefect collection of tasks and subflows to integrate with AWS
   doc_url: https://prefecthq.github.io/prefect-aws/
   dev_url: https://github.com/PrefectHQ/prefect-aws
   
