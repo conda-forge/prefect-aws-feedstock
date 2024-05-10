@@ -1,5 +1,5 @@
 {% set name = "prefect-aws" %}
-{% set version = "0.4.14" %}
+{% set version = "0.4.16" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/prefect_aws-{{ version }}.tar.gz
-  sha256: 03ed4d4b9a49a7bad57fe7198da79f2ff5217a82b90600ae9aa6c9d29c951c95
+  sha256: 005bc0898145d0b8eb5986d70c5e14bbdbf17c850e44cc225fd40ccd77ff72ef
 
 build:
   noarch: python
@@ -44,7 +44,7 @@ about:
   license_family: Apache
   doc_url: https://prefecthq.github.io/prefect-aws/
   dev_url: https://github.com/PrefectHQ/prefect-aws
-  
+
 
 extra:
   recipe-maintainers:
