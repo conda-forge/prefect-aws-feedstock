@@ -149,5 +149,6 @@ Feedstock Maintainers
 
 * [@ahuang11](https://github.com/ahuang11/)
 * [@desertaxle](https://github.com/desertaxle/)
+* [@peterbygrave](https://github.com/peterbygrave/)
 * [@skrsna](https://github.com/skrsna/)
 
