@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/prefect_aws-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/prefect_aws-{{ version }}.tar.gz
   sha256: 819db0d19955efb95b1109dd0bd06a14f52c00b7635b8e9fe2159bef606d4c32
 
 build:
