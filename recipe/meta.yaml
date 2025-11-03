@@ -1,5 +1,5 @@
 {% set name = "prefect-aws" %}
-{% set version = "0.5.13" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/prefect_aws-{{ version }}.tar.gz
-  sha256: d67bd445df4d2d6dc6c216e4f8740d6bd2c2431b9f332bad590c30a2e8fcf077
+  sha256: 58ebc2525e2db33501c263d98c69fc75c236ce70e0d2ec299c70c592b34ef5d7
 
 build:
   noarch: python
@@ -21,13 +21,16 @@ requirements:
     - setuptools
   run:
     - python >={{ python_min }}
+    - aiobotocore >=2.23.2
     - boto3 >=1.24.53
     - botocore >=1.27.53
     - mypy-boto3-s3 >=1.24.94
     - mypy-boto3-secretsmanager >=1.26.49
     - prefect >=3.4.7
     - pyparsing >=3.1.1
+    - rich >=10.0.0
     - tenacity >=8.0.0
+    - typer >=0.9.0
 
 test:
   requires:
