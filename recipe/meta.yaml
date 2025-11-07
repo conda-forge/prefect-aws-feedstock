@@ -1,5 +1,5 @@
 {% set name = "prefect-aws" %}
-{% set version = "0.7.0" %}
+{% set version = "0.7.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/prefect_aws-{{ version }}.tar.gz
-  sha256: 58ebc2525e2db33501c263d98c69fc75c236ce70e0d2ec299c70c592b34ef5d7
+  sha256: 4a31f4fab8b86baf0e4a63ffed3ccccfc4baa17933f1f089096ebdcb4db43b66
 
 build:
   noarch: python
