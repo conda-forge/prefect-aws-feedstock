@@ -1,5 +1,5 @@
 {% set name = "prefect-aws" %}
-{% set version = "0.7.4" %}
+{% set version = "0.7.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/prefect_aws-{{ version }}.tar.gz
-  sha256: ba3e279e198e86d7b3f366fd7cdcc6b4e164ede67bbb295faf489f840c7bc89f
+  sha256: 73c4eb6938361bfa3f401d15961ad8d9698ed26b7e4c5d9c04446a3e716b3172
 
 build:
   noarch: python
@@ -26,7 +26,7 @@ requirements:
     - botocore >=1.27.53
     - mypy-boto3-s3 >=1.24.94
     - mypy-boto3-secretsmanager >=1.26.49
-    - prefect >=3.4.7
+    - prefect >=3.6.22
     - pyparsing >=3.1.1
     - rich >=10.0.0
     - tenacity >=8.0.0
