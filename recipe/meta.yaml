@@ -12,13 +12,16 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script_env:
+    - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   number: 0
 
 requirements:
   host:
     - python {{ python_min }}
     - pip
-    - setuptools
+    - setuptools >=45
+    - setuptools-scm >=6.2
   run:
     - python >={{ python_min }}
     - aiobotocore >=2.23.2
@@ -26,7 +29,7 @@ requirements:
     - botocore >=1.27.53
     - mypy-boto3-s3 >=1.24.94
     - mypy-boto3-secretsmanager >=1.26.49
-    - prefect >=3.7.0
+    - prefect >=3.8.4
     - pyparsing >=3.1.1
     - rich >=10.0.0
     - tenacity >=8.0.0
@@ -37,6 +40,8 @@ test:
     - python {{ python_min }}
   imports:
     - prefect_aws
+  commands:
+    - python -c "import importlib.metadata as m; v = m.version('prefect-aws'); assert v == '{{ version }}', v"
 # Disable `pip check` until `prefect` adds `pip check` support
 #  commands:
 #    - pip check
@@ -44,13 +49,13 @@ test:
 #    - pip
 
 about:
-  home: https://github.com/PrefectHQ/prefect-aws
+  home: https://github.com/PrefectHQ/prefect/tree/main/src/integrations/prefect-aws
   summary: Prefect collection of tasks and subflows to integrate with AWS
   license: Apache-2.0
   license_file: LICENSE
   license_family: Apache
-  doc_url: https://prefecthq.github.io/prefect-aws/
-  dev_url: https://github.com/PrefectHQ/prefect-aws
+  doc_url: https://docs.prefect.io/integrations/prefect-aws
+  dev_url: https://github.com/PrefectHQ/prefect
 
 
 extra:
